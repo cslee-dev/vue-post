@@ -4,12 +4,12 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-function load(componentPath){
+function load(componentPath) {
   return import(`@/views/${componentPath}`)
 }
 
 export default new Router({
-  mode : 'history',
+  mode: 'history',
   scrollBehavior(to, from, savePosition) {
     if (to.hash) {
       return {selector: to.hash}; // 앵커 태그 이동 지원
@@ -22,21 +22,26 @@ export default new Router({
       path: '/',
       name: 'Main',
       component: () => load('Main.vue'),
-      children:[
+      children: [
         {
-          path : '/',
-          name : 'Home',
+          path: '/',
+          name: 'Home',
           component: () => load('Home.vue'),
         },
         {
           path: 'state',
-          name : 'State',
-          component : () => load('exam/StateExam.vue')
+          name: 'State',
+          component: () => load('exam/StateExam.vue')
         },
         {
           path: 'getter',
-          name : 'Getter',
-          component : () => load('exam/GetterExam.vue')
+          name: 'Getter',
+          component: () => load('exam/GetterExam.vue')
+        },
+        {
+          path: 'mutation',
+          name: 'Mutation',
+          component: () => load('exam/MutationExam.vue')
         },
       ]
     }

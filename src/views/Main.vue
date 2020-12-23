@@ -1,6 +1,7 @@
 <template>
   <div>
-    <vs-navbar class="nabarx" color="dark" text-color="rgba(255,255,255,0.6)" active-text-color="rgba(255,255,255,1)">
+    <vs-navbar class="nabarx" color="dark" text-color="rgba(255,255,255,0.6)" active-text-color="rgba(255,255,255,1)"
+               style="padding: 10px 10px;">
       <div slot="title">
         <vs-navbar-title style="color:rgba(255,255,255,0.6)">
           Vuex 실습
@@ -16,7 +17,7 @@
         <router-link :to="{name:'Getter'}">GETTER EXAM</router-link>
       </vs-navbar-item>
       <vs-navbar-item index="3">
-        <a href="#">MUTATION EXAM</a>
+        <router-link :to="{name:'Mutation'}">MUTATION EXAM</router-link>
       </vs-navbar-item>
       <vs-navbar-item index="4">
         <a href="#">ACTION EXAM</a>
