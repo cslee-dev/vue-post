@@ -3,6 +3,9 @@
   margin:auto;
 }
 
+.content-wrap{
+  padding : 20px 20px;
+}
 @media all and (max-width: 1320px){
   .container{
     width:100%;

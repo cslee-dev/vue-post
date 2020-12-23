@@ -10,10 +10,10 @@
         <router-link :to="{name:'Home'}">Home</router-link>
       </vs-navbar-item>
       <vs-navbar-item index="1">
-        <a href="#">STATE EXAM</a>
+        <router-link :to="{name:'State'}">STATE EXAM</router-link>
       </vs-navbar-item>
       <vs-navbar-item index="2">
-        <a href="#">GETTER EXAM</a>
+        <router-link :to="{name:'Getter'}">GETTER EXAM</router-link>
       </vs-navbar-item>
       <vs-navbar-item index="3">
         <a href="#">MUTATION EXAM</a>

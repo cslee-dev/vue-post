@@ -1,5 +1,5 @@
 const state = {
-  title : "상태 테스트"
+  message : "안녕 상태 저장소",
 }
 
 export default state

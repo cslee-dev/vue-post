@@ -27,7 +27,17 @@ export default new Router({
           path : '/',
           name : 'Home',
           component: () => load('Home.vue'),
-        }
+        },
+        {
+          path: 'state',
+          name : 'State',
+          component : () => load('exam/StateExam.vue')
+        },
+        {
+          path: 'getter',
+          name : 'Getter',
+          component : () => load('exam/GetterExam.vue')
+        },
       ]
     }
   ]
