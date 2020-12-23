@@ -9,9 +9,7 @@ import mutations from '@/store/mutations'
 import actions from '@/store/actions'
 
 const store = new Vuex.Store({
-  state : {
-    message : "안녕 상태 저장소"
-  },
+  state,
   getters,
   mutations,
   actions,
