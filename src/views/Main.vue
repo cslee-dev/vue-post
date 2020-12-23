@@ -20,7 +20,7 @@
         <router-link :to="{name:'Mutation'}">MUTATION EXAM</router-link>
       </vs-navbar-item>
       <vs-navbar-item index="4">
-        <a href="#">ACTION EXAM</a>
+        <router-link :to="{name:'Action'}">ACTION EXAM</router-link>
       </vs-navbar-item>
       <vs-navbar-item index="5">
         <a href="#">POST</a>

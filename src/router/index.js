@@ -43,6 +43,11 @@ export default new Router({
           name: 'Mutation',
           component: () => load('exam/MutationExam.vue')
         },
+        {
+          path: 'action',
+          name: 'Action',
+          component: () => load('exam/ActionExam.vue')
+        },
       ]
     }
   ]
