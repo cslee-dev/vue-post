@@ -22,6 +22,9 @@ export default {
     doubleVueMessage(){
       return this.$store.state.message + " " + this.$store.state.message;
     },
+    doubleVuexMessage(){
+      return this.$store.getters.doubleMessage
+    },
     ...mapGetters({
       mapDoubleMessage : 'doubleMessage'
     }),

@@ -26,7 +26,11 @@ export default {
       if (this.newMessage.length ===0){
         return window.alert("값이 없습니다.");
       }
-      this.$store.commit(UPDATE_MESSAGE, {message: this.newMessage.trim()})
+      // this.$store.commit(UPDATE_MESSAGE, {message: this.newMessage.trim()})
+      this.$store.commit({
+        type: UPDATE_MESSAGE,
+        message: this.newMessage.trim(),
+      })
 
     },
   }

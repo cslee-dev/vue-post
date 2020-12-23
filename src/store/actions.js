@@ -19,8 +19,8 @@ const actions = {
   fetchMovies(context){
     return new Promise((resolve, reject) => {
       setTimeout(function(){
-        context.commit(types.SET_MOVIES, movies)
         resolve()
+        context.commit(types.SET_MOVIES, movies)
       },1000)
     })
 
