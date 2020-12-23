@@ -1,13 +1,47 @@
 <template>
-  <h1>Hello Vue.js</h1>
+  <div>
+    <vs-navbar class="nabarx" color="dark" text-color="rgba(255,255,255,0.6)" active-text-color="rgba(255,255,255,1)">
+      <div slot="title">
+        <vs-navbar-title style="color:rgba(255,255,255,0.6)">
+          Vuex 실습
+        </vs-navbar-title>
+      </div>
+      <vs-navbar-item index="0">
+        <router-link :to="{name:'Home'}">Home</router-link>
+      </vs-navbar-item>
+      <vs-navbar-item index="1">
+        <a href="#">STATE EXAM</a>
+      </vs-navbar-item>
+      <vs-navbar-item index="2">
+        <a href="#">GETTER EXAM</a>
+      </vs-navbar-item>
+      <vs-navbar-item index="3">
+        <a href="#">MUTATION EXAM</a>
+      </vs-navbar-item>
+      <vs-navbar-item index="4">
+        <a href="#">ACTION EXAM</a>
+      </vs-navbar-item>
+      <vs-navbar-item index="5">
+        <a href="#">POST</a>
+      </vs-navbar-item>
+    </vs-navbar>
+    <router-view/>
+  </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 export default {
-  name: "Main"
+  name: "Main",
+  computed: {
+    ...mapState(['title'])
+  }
 }
 </script>
 
 <style scoped>
-
+#postContent {
+  padding: 100px 20px;
+}
 </style>
