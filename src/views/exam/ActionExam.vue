@@ -51,7 +51,7 @@ import {mapActions, mapState} from 'vuex';
 import {UPDATE_MESSAGE} from '@/store/mutation-types'
 
 export default {
-  name: "MutationExam",
+  name: "ActionExam",
   data() {
     return {
       newMessage: '',
@@ -60,30 +60,11 @@ export default {
   },
   computed: mapState(['movies']),
   methods: {
-    fetchLoadingOpen(){
-      let vm = this;
-      this.$vs.loading({
-        background: 'dark',
-        color: '#fff',
-        container: vm.$refs.loadableButton.$el,
-        scale: 0.45
-      });
-      this.$vs.loading({
-        container: '#div-with-loading',
-        scale: 0.6
-      })
-
-    },
-    fetchLoadingClose(){
-      let vm = this;
-      vm.$vs.loading.close(vm.$refs.loadableButton.$el);
-      this.$vs.loading.close('#div-with-loading > .con-vs-loading');
-    },
     fetchVueMovies() {
       let vm = this;
-      vm.fetchLoadingOpen()
+      vm.$mkdSpinner.show()
       this.$store.dispatch('fetchMovies').then(function(){
-        vm.fetchLoadingClose();
+        vm.$mkdSpinner.hide();
       });
     },
     ...mapActions({

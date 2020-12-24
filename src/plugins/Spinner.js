@@ -1,15 +1,19 @@
 import SpinnerTemplate from '@/components/spinners/cornerSpinner.vue'
 
-const Spinner ={
-  install(Vue, options){
-    Vue.component('mkd-spinner', SpinnerTemplate)
+const Spinner = {
+  install(Vue, options) {
+    const spinnerComponent = Vue.component('mkd-spinner', SpinnerTemplate)
 
-    function setSpinner(command){
-      if(command === 0){
-      }
+    function show() {
+      document.getElementById('spinner').style.display = "flex";
     }
+
+    function hide() {
+      document.getElementById('spinner').style.display = "none";
+    }
+
     Vue.prototype.$mkdSpinner = {
-      setSpinner
+      show, hide
     }
   }
 }

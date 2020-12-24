@@ -26,6 +26,7 @@
         <a href="#">POST</a>
       </vs-navbar-item>
     </vs-navbar>
+    <mkd-spinner></mkd-spinner>
     <router-view/>
   </div>
 </template>
