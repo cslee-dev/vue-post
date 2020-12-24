@@ -26,19 +26,20 @@
         <a href="#">POST</a>
       </vs-navbar-item>
     </vs-navbar>
-    <mkd-spinner></mkd-spinner>
+    <global-spinner></global-spinner>
     <router-view/>
   </div>
 </template>
 
 <script>
 import {mapState} from 'vuex'
-
+import globalSpinner from '@/components/spinners/CornerSpinner.vue'
 export default {
   name: "Main",
   computed: {
     ...mapState(['title'])
-  }
+  },
+  components:{globalSpinner}
 }
 </script>
 

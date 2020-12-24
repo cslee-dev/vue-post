@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import store from '@/store/store'
+import {HIDE_GLOBAL_SPINNER, SHOW_GLOBAL_SPINNER} from "@/store/mutation-types";
 
 Vue.use(Router)
 
@@ -46,7 +47,25 @@ export default new Router({
         {
           path: 'action',
           name: 'Action',
-          component: () => load('exam/ActionExam.vue')
+          component: () => load('exam/ActionExam.vue'),
+          beforeEnter(to, from, next) {
+            if(from.name){
+              store.commit(SHOW_GLOBAL_SPINNER);
+              store.dispatch('fetchMovies')
+                .then(function () {
+                  store.commit(HIDE_GLOBAL_SPINNER);
+                  next()
+                }).catch(err => console.log(err))
+            }else{
+              next()
+              store.commit(SHOW_GLOBAL_SPINNER);
+              store.dispatch('fetchMovies')
+                .then(function () {
+                  store.commit(HIDE_GLOBAL_SPINNER);
+                }).catch(err => console.log(err))
+            }
+
+          },
         },
       ]
     }

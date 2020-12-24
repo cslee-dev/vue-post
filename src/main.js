@@ -15,11 +15,11 @@ Vue.use(Vuesax)
 
 // import app css
 import '@/assets/style/app.css'
-import Spinner from "@/plugins/Spinner";
 
-Vue.use(Spinner);
 /* eslint-disable no-new */
-new Vue({
+
+
+const app = new Vue({
   el: '#app',
   router,
   store,
