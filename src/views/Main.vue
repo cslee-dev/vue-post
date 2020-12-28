@@ -23,7 +23,7 @@
         <router-link :to="{name:'Action'}">ACTION EXAM</router-link>
       </vs-navbar-item>
       <vs-navbar-item index="5">
-        <a href="#">POST</a>
+        <router-link :to="{name:'PostHome'}">POST</router-link>
       </vs-navbar-item>
     </vs-navbar>
     <global-spinner></global-spinner>
@@ -34,12 +34,13 @@
 <script>
 import {mapState} from 'vuex'
 import globalSpinner from '@/components/spinners/CornerSpinner.vue'
+
 export default {
   name: "Main",
   computed: {
     ...mapState(['title'])
   },
-  components:{globalSpinner}
+  components: {globalSpinner}
 }
 </script>
 
