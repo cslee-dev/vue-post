@@ -25,6 +25,22 @@ const actions = {
         resolve()
       }, 1000)
     })
+  },
+  updatePost(context, payload) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        context.commit(types.UPDATE_POST, payload)
+        resolve()
+      }, 1000)
+    })
+  },
+  deletePost(context, postId) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        context.commit(types.DELETE_POST, postId)
+        resolve()
+      }, 1000)
+    })
   }
 }
 
