@@ -23,8 +23,7 @@ const actions = {
         context.commit(types.SET_MOVIES, movies)
       },1000)
     })
-
-  }
+  },
 }
 
 export default actions

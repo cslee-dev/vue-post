@@ -1,24 +1,34 @@
+import store from "@/store/store";
+import {HIDE_GLOBAL_SPINNER, SHOW_GLOBAL_SPINNER} from "@/store/mutation-types";
+
 const postRoute = [
   {
     path: 'posts',
     name: 'PostHome',
-    component: () => import('@/views/post/PostHome.vue')
+    component: () => import('@/views/post/PostHome.vue'),
+    beforeEnter(to, from, next) {
+      store.commit(SHOW_GLOBAL_SPINNER)
+      if (from.name) {
+        store.dispatch('posts/fetchPost')
+          .then(() => {
+            store.commit(HIDE_GLOBAL_SPINNER)
+            next()
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+      } else {
+        next()
+        store.dispatch('posts/fetchPost')
+          .then(() => {
+            store.commit(HIDE_GLOBAL_SPINNER)
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+      }
+    }
   },
-  {
-    path: 'posts/create',
-    name: 'PostCreate',
-    component: () => import('@/views/post/PostCreate.vue')
-  },
-  {
-    path : 'posts/:id',
-    name : 'PostRead',
-    component: () => import('@/views/post/PostRead.vue')
-  },
-  {
-    path: 'posts/:id/update',
-    name : 'PostUpdate',
-    component: () => import('@/views/post/PostUpdate.vue')
-  }
 ]
 
 export default postRoute
